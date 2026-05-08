@@ -10,7 +10,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Make Script Executable
-        run: chmod +x Scripts/greet.sh
+        run: chmod +x scripts/greet.s
       - name: Run Greet
         run: ./scripts/greet.sh "Ugwumicheal"
   # farewell:
