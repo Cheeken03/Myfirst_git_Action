@@ -1,0 +1,25 @@
+name: Greeting pipeline
+on:
+  push:
+    branches: [main]
+
+jobs:
+  greet: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Make Script Executable
+        run: chmod +x Scripts/greet.sh
+      - name: Run Greet
+        run: ./scripts/greet.sh "Ugwumicheal"
+  # farewell:
+  #   runs-on: ubuntu-latest
+  #   needs: greet
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v4
+  #     - name: Make Script Executable
+  #       run: chmod +x Scripts/greet.sh
+  #     - name: Run Greet
+  #       run: ./scripts/greet.sh "Omotolani"
