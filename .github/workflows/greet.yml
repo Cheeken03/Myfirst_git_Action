@@ -25,6 +25,7 @@ jobs:
         run: ./scripts/greet.sh "Goodbye!"
   secrets:
     runs-on: ubuntu-latest
+    needs: [greet, farewell]
     steps: 
       - name: Checkout Code
         uses: actions/checkout@v4 
