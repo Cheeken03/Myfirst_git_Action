@@ -36,3 +36,8 @@ jobs:
         env:
           USERNAME: ${{ vars.USERNAME}}  # Environment Variables: vars
           PASSWORD: ${{ secrets.PASSWORD}} # Environment Secrets: secrets
+  deploy:
+    if: contains(github.event.head_commit.message, 'deploy')
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploy triggered"
